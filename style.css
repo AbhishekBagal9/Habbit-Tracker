@@ -1,0 +1,124 @@
+*, *::after, *::before{
+    border:0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+--primary:#e0e7f1;
+--secondry:#125dc8;
+--light:#f4f5f5;
+--danger:#d81616;
+--shadow:rgba(8,47,102,0.12);
+--base:1rem;
+--large:calc(var(--base)*5);
+--med:calc(var(--base)*3);
+--sm:calc(var(--base)*1.5);
+}
+
+:root.dark{
+    --primary:#12223b;
+    --secondry:#627da6;
+    --light:#003074;
+    --danger:#9f0b0b;
+    --shadow:rgba(152,174,205,0.05)
+}
+body{
+    font-family: 'Odibee Sans',cursive;
+    background-color: var(--primary);
+    padding: var(--med);
+    display: grid;
+    place-items: center;
+    color: var(--secondry);
+}
+.themecontainer{
+    padding: var(--sm);
+    display: grid;
+    place-items: center;
+
+}
+.theme{
+width: 50px;
+height: 25px;
+background-color: var(--secondry);
+border-radius: var(--base);
+cursor: pointer;
+position: relative;
+}
+
+.theme::before{
+    content: ' ';
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary);
+    position:absolute;
+    z-index: 3;
+    top: 2px;
+    left: 3px;
+    border-radius: 50%;
+    transition:all 300ms ease-in-out;
+}
+
+h1{
+    font-size: var(--med);
+}
+
+.habbitcontainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+    padding: var(--sm) var(--med);
+    max-width: 400px;
+    grid-gap: var(--base);
+   
+
+}
+
+.habbit{
+    display: grid;
+    place-items: center;
+   
+}
+.habbitbtn{
+    width: var(--large);
+    height: var(--large);
+    border-radius: 50%;
+    background-color: var(--primary);
+    border: 6px solid var(--secondry);
+    color: var(--secondry);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition:all 300ms ease-in-out;
+    }
+ 
+    .completed{
+        background-color: var(--secondry);
+        color: var(--primary);
+    }
+    .notcompleted{
+        background-color: var(--primary);
+        color: var(--secondry);
+    }
+.habbitbtn:hover{
+    opacity: 0.8;
+}
+
+.habbitbtn svg{
+    pointer-events: none;
+    width: var(--med);
+    height: var(--med);
+
+}
+
+.newhabbitadd{
+    width: var(--med);
+    height: var(--med);
+    border-radius: 50%;
+    background-color: var(--secondry);
+    color: var(--primary);
+    display: grid;
+    place-items: center;
+    transition:all 300ms ease-in-out;
+}
+
