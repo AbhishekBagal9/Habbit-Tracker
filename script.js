@@ -1,7 +1,13 @@
 
 //selectors
-let habits = document.querySelectorAll('.habbitbtn')
-let themebtn = document.querySelector(".theme")
+const habits = document.querySelectorAll('.habbitbtn')
+const themebtn = document.querySelector(".theme")
+const modalContiner = document.querySelector(".modalcontainer")
+const habbitbtn = document.querySelector(".newhabbitadd")
+const newHabitTitle = document.querySelector('#title');
+const icons = document.querySelectorAll('.icon');
+const addBtn = document.querySelector('#add');
+const cancelBtn = document.querySelector('#cancel');
 
 //storage obj and the saveTheme Method..
 const Storage = {
@@ -21,6 +27,7 @@ function themeaction(){
   root.classList.toggle("dark")
  
   themebtn.classList.contains('dark') ? Storage.saveTheme('dark') : Storage.saveTheme('')
+
 }
 
 
@@ -29,9 +36,15 @@ themebtn.addEventListener("click",function(){
   themeaction()
 })
 
+habbitbtn.addEventListener("click",function(){
+  modalContiner.classList.add('active');
+  modalContiner.setAttribute("arial-hidden",false)
+})
+
 habits.forEach((habit) => {
     habit.addEventListener("click",function(){
       habit.classList.toggle("completed")
+
     })
 })
 
